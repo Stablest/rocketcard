@@ -1,0 +1,184 @@
+:root {
+    --bg: #000000;
+    --bg-card: #0E1218;
+    --text: #F1F1F1;
+    --img-profile: #8257e5;
+    --buttons: #FFF;
+    --border-button: #1A1A1A;
+  }
+
+  *{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF;
+  }
+
+  body{
+    background-color: #0E1218;
+    color: #FFFFFF;
+    z-index: 0;
+  }
+
+  /* .box{
+
+  } */
+
+  main{
+    width: 100vw;
+    height: auto;
+  }
+
+
+
+  .flexColumn{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mini-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mainDiv{
+    width: 813px;
+    height: 733px;
+    margin: 70px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .firstElement{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .container{
+    position: relative;
+    width: 438px;
+    height: 693px;
+    background-color: #521010;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mini-container{
+    width: 407px;
+    height: 644px;
+    background-color: #0E1218;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 20px;
+    overflow: hidden;
+  }
+
+  .main-img{
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+  }
+
+  .mainAvatar{
+    margin-left: 100px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .elipse{
+    width: 56px;
+    height: 56px;
+    border: 1px solid #F1F1F1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle{
+    width: 370px;
+    width: 370px;
+    border: 10px solid #8257E5;
+    border-radius: 50%;
+  }
+
+
+  .first-logo{
+    width: 30px;
+    height: 37px;
+  }
+
+  .last-logo{
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #FFFFFF;
+
+  }
+
+  .last-logo img{
+    width: 28px;
+    height: 34px;
+  }
+
+  .divList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 120px;
+    border: 1px blue solid;
+
+    width: 203px;
+    height: 195px;
+
+    background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
+    border-radius: 50px;
+
+  }
+
+  .boxList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* list-style: none; */
+    list-style-type: none;
+    /* padding: 0; */
+
+
+  }
+
+  .listItem{
+    display: flex;
+    border: 1px red solid;
+  }
+
+  .customCard{
+    width: 229px;
+    height: 111px;
+  }
+
+  .getBackground{
+    width: 229px;
+    height: 60px;
+    background: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+  }
