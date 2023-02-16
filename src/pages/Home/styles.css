@@ -60,7 +60,7 @@
     align-items: center;
   }
 
-  .container{
+  #container{
     position: relative;
     width: 438px;
     height: 693px;

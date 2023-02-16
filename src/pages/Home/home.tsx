@@ -14,20 +14,11 @@ type User = {
 }
 
 const URL = 'https://api.github.com/users/stablest'
+
 export default function Home(){
     const [userNow,setUser] = useState({} as User)
-    useEffect(() => updateUser,[])
-    return(
-        <main>
-            <div className='flex mainDiv'>
-                <div className='firstElement'>
-                    <span>Compartilhe seu #rocketcard</span>
-                    <Card user={userNow}></Card>
-                </div>
-                <CustomCard></CustomCard>
-            </div>
-        </main>
-    )
+
+    useEffect(() => {updateUser},[])
 
     async function updateUser():Promise<void>{
         const res = await fetch(URL)
@@ -40,14 +31,26 @@ export default function Home(){
             company : data.company,
             location : data.location,
         }
-        console.log(user)
         setUser(user)
     }
-}
 
+
+    return(
+        <main>
+            <div className='flex mainDiv'>
+                <div className='firstElement'>
+                    <span>Compartilhe seu #rocketcard</span>
+                    <Card user={userNow}></Card>
+                </div>
+                <CustomCard></CustomCard>
+            </div>
+        </main>
+    )
+
+}
 function Card(props:any){
     return(
-        <div className='container'>
+        <div className='Card' id='container'>
             <div className='mini-container'>        
                 <div className='mini-header'>
                     <div className='elipse'>
@@ -62,8 +65,8 @@ function Card(props:any){
                     <ul className='boxList'>
                         <li className='listItem'>
                             <img src="assets/followers.svg" alt="" />
-                            {props.user.followers}
-                            Seguidores
+                            <span>{props.user.followers}</span>
+                            <span>Seguidores</span>
                         </li>
                         <li className='listItem'>
                             <img src="assets/following.svg" alt="" />
@@ -72,16 +75,16 @@ function Card(props:any){
                         </li>
                         <li className='listItem'>
                             <img src="assets/repository.svg" alt="" />
-                            {props.user.public_repos}
-                            Repositórios
+                            <span>{props.user.public_repos}</span>
+                            <span>Repositórios</span>
                         </li>
                         <li className='listItem'>
-                            <img src="assets/company.svg" alt="" />
-                            {props.user.company ? props.user.company : 'Nenhuma'}
+                        <img src="assets/company.svg" alt="" />
+                            {props.user.company ? <span> props.user.company</span> : 'Nenhuma'}
                         </li>
                         <li className='listItem'>
                             <img src="assets/location.svg" alt="" />
-                            {props.user.location ? props.user.location : 'Nenhuma'}
+                            {props.user.location ? <span> props.user.location</span> : 'Nenhuma'}
                         </li>
                     </ul>
                 </div>
@@ -93,12 +96,20 @@ function Card(props:any){
         </div>
     )
 }
-
-function CustomCard(){
+function CustomCard(props:any){
     return(
         <div className='customCard'>
             <span>Customizar Rocketcard</span>
-            <button className='getBackground'>Gerar background</button>
+            <button className='getBackground' onClick={changeBackground}>Gerar background</button>
         </div>
     )
+
+    function changeBackground() {
+        const container = document.getElementById('container')
+        let rgb:number[] = []
+        for(let i:number=0; i<=2 ; i++)
+            rgb[i] = (Math.random()*999)%255
+        if(container)
+            container.style.backgroundColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
+    }
 }
