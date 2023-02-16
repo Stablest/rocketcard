@@ -18,7 +18,7 @@ const URL = 'https://api.github.com/users/stablest'
 export default function Home(){
     const [userNow,setUser] = useState({} as User)
 
-    useEffect(() => {updateUser},[])
+    useEffect(() => {updateUser()},[])
 
     async function updateUser():Promise<void>{
         const res = await fetch(URL)
@@ -48,6 +48,7 @@ export default function Home(){
     )
 
 }
+
 function Card(props:any){
     return(
         <div className='Card' id='container'>
